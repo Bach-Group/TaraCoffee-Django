@@ -199,3 +199,7 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
     top: -70px;
     color: white;
 }
+#menu img{
+    width: 150px;
+    height:150px
+}
