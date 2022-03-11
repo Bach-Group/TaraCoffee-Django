@@ -1,15 +1,27 @@
 from django.shortcuts import render
-from .models import Menu, Config
+from .models import Menu, Config, Imageslider
+from typing import Dict
+
+def merge_config(params:Dict):
+    configs = Config.objects.all()
+    
+    map_configs = {}
+    for config in configs:
+        map_configs[config.code] = config.content
+    params["map_configs"] = map_configs
+    print("map config",params["map_configs"])
+    return params
+
+def my_render(request, template, params):
+    return render(request,template,merge_config(params))
+
 
 def index(request):
     menu=Menu.objects.all()[:8]
     menu2=Menu.objects.all()[8:]
-#     qs = MyModel.objects.filter(blah = blah)
-# if qs.count() > 0:
-#     return qs[0]
-# else:
-#     return None
-    contex={"menu":menu,"menu2":menu2}
-    return render(request,"coffee/index.html", contex)
+    imageslider=Imageslider.objects.all()
+
+    contex={"menu":menu,"menu2":menu2,"imageslider":imageslider}
+    return my_render(request,"coffee/index.html", contex)
 
 # Create your views here.

@@ -18,6 +18,14 @@ class Config(models.Model):
         return self.code
 
 
+class Imageslider(models.Model):
+    code=models.CharField(max_length=30)
+    image=models.ImageField(upload_to='imageslider/')
+
+    def __str__(self):
+        return self.code
+
+
 
 
 # Create your models here.
