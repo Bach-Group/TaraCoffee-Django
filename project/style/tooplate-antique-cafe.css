@@ -194,15 +194,17 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
     color: rgba(252, 249, 249, 0.8) !important;
     font-size: 40px;
 }
-.slick-dots li button::before{
-    font-size: 12px;
-    top: -70px;
-    color: white;
-}
+
 #menu img{
     width: 150px;
     height:150px
 }
 .tm-bg-brown{
     background-color: black !important;
+}
+
+.slick-dots li button::before {
+    font-size: 60px !important;
+    top: -80px !important;
+    color: #e8eaeb !important;
 }

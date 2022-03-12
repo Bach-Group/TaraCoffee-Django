@@ -9,7 +9,7 @@ def merge_config(params:Dict):
     for config in configs:
         map_configs[config.code] = config.content
     params["map_configs"] = map_configs
-    print("map config",params["map_configs"])
+    # print("map config",params["map_configs"]) # comment dong nay thi dc, vì param co may item khoong print ra dc
     return params
 
 def my_render(request, template, params):
