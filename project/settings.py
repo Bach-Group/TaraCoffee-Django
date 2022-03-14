@@ -15,7 +15,6 @@ import os
 import django_heroku
 
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -85,15 +84,18 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #      }
 #  }
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql', 
-         'NAME': 'coffee',
-         'USER': 'root',
-         'PASSWORD': 'mysql@22221996',
-         'HOST': 'localhost',    #Or an IP Address that your DB is hosted on
-         'PORT': '3306',
-     }
- }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'coffee',
+        'USER': 'root',
+        'PASSWORD': 'mysql@22221996',
+        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',  # <--- Use this
+        }
+    }
+}
 
 
 # Password validation
@@ -131,14 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS=((os.path.join(BASE_DIR,'project/style')),)
+STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'project/style')),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-
 # MEDIA_URL= 'index/'
-MEDIA_ROOT= os.path.join(BASE_DIR)
-
+MEDIA_ROOT = os.path.join(BASE_DIR)
 
 
 # Default primary key field type
@@ -147,5 +147,3 @@ MEDIA_ROOT= os.path.join(BASE_DIR)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
-
-
