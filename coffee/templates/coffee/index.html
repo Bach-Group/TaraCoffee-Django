@@ -9,14 +9,15 @@
     <title>Tara Cafe</title> 
   
     
-
+    <link rel="stylesheet" href="{% static 'all.min.css' %}"> 
     <link rel="stylesheet"  href="{% static 'slick-theme.css' %}"/>
     <link rel="stylesheet"  href="{% static 'slick.css' %}"/>
 
-
-    <link rel="stylesheet" href="{% static 'all.min.css' %}"> 
     <link rel="stylesheet" href="{% static 'tailwind.css' %}">
     <link rel="stylesheet" href="{% static 'tooplate-antique-cafe.css' %}">
+  
+
+     
 
 </head>
 <body>    
@@ -25,9 +26,9 @@
             <div class="tm-container mx-auto px-2 md:py-6 text-right">
                 <button class="md:hidden py-2 px-2" id="menu-toggle"><i class="fas fa-2x fa-bars tm-text-gold"></i></button>
                 <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
-                    <li class="inline-block mb-4 mx-4"><a href="#intro" class="tm-text-gold py-1 md:py-3 px-4">Home</a></li>
-                    <li class="inline-block mb-4 mx-4"><a href="#menu" class="tm-text-gold py-1 md:py-3 px-4">Menu</a></li>
-                    <li class="inline-block mb-4 mx-4"><a href="#about" class="tm-text-gold py-1 md:py-3 px-4">About & Contact</a></li>
+                    <li class="inline-block mb-4 mx-4"><a href="#intro" class="tm-text-gold py-1 md:py-3 px-4">Home <i class="fa-solid fa-house"></i></a></li>
+                    <li class="inline-block mb-4 mx-4"><a href="#menu" class="tm-text-gold py-1 md:py-3 px-4">Menu <i class="fa-solid fa-mug-hot"></i></i></a></li>
+                    <li class="inline-block mb-4 mx-4"><a href="#about" class="tm-text-gold py-1 md:py-3 px-4">About & Contact <i class="fa-solid fa-address-card"></i></a></li>
                  
                 </ul>
             </div>            
@@ -56,8 +57,9 @@
                 <div class="text-center">
                     <div class="inline-block">
                         <a href="#menu" class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition">
-                            <i class="fas fa-coffee mr-3"></i>
-                            <span>Nhấn vào để khám phá...</span>                        
+                            <i class="fas fa fa-coffee mr-3"></i>
+                            <span>Nhấn vào để khám phá...</span>  
+                                                  
                         </a>
                     </div>                    
                 </div>                
@@ -76,7 +78,7 @@
     <div id="menu" class="parallax-window" data-parallax="scroll" data-image-src="{% static 'backimage/6.jpg' %}">
         <div class="container mx-auto tm-container py-24 sm:py-48">
             <div class="text-center mb-16">
-                <h1 class="bg-white tm-text-brown py-6 px-12 text-5xl font-medium inline-block rounded-md">Menu</h1>
+                <h1 class="bg-white tm-text-brown py-6 px-12 text-5xl font-medium inline-block rounded-md"> Menu </h1>
             </div>            
             <div class="flex flex-col lg:flex-row justify-around items-center">
                 <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 tm-bg-black tm-item-container">
@@ -112,21 +114,21 @@
             <div class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container">
                 <h2 class="text-3xl mb-6 tm-text-green">Liên hệ với chúng tôi:</h2>
                 <p class="mb-10 text-lg">
-                    <span class="block mb-2">Địa chỉ: <a class="hover:text-yellow-600 transition">{{ map_configs.address}}</a></span>
-                    <span class="block">Điện thoại: <a  class="hover:text-yellow-600 transition">{{ map_configs.phone}}</a></span>  
-                    <span class="block">Website: <a  class="hover:text-yellow-600 transition">{{ map_configs.website}}</a></span>                      
+                    <span class="block mb-2"><i class="fa-solid fa-location-dot"></i> &nbsp; <a class="hover:text-yellow-600 transition">{{ map_configs.address}}.</a></span>
+                    <span class="block"><i class="fa-solid fa-phone"></i>&nbsp; <a  class="hover:text-yellow-600 transition">{{ map_configs.phone}}</a></span>  
+                    <span class="block"><i class="fa-brands fa-internet-explorer"></i>&nbsp; <a href="https://taracafe.herokuapp.com/" class="hover:text-yellow-600 transition">{{ map_configs.website}}</a></span>                      
                 </p>
                 <div class="text-center">
                     <a href="https://www.google.com/maps/place/91+Nguy%E1%BB%85n+Thanh+Tuy%E1%BB%81n,+Ph%C6%B0%E1%BB%9Dng+2,+T%C3%A2n+B%C3%ACnh,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7970516,106.6590871,17z/data=!3m1!4b1!4m5!3m4!1s0x317529317eb87c19:0x583603f07d37d7bc!8m2!3d10.7970463!4d106.6612758?hl=vi-VN" class="inline-block text-white text-2xl pl-10 pr-12 py-6 rounded-lg transition tm-bg-green">
-                        <i class="fas fa-map-marked-alt mr-8"></i>
+                    <i class="fas fa-solid fa-map-location-dot mr-8"></i>
                         Open Maps
                     </a>
                 </div>                    
             </div>
             <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-white bg-opacity-80 tm-item-container">
-                <h2 class="mb-6 tm-text-green text-4xl font-medium">Đôi lời về Quán Cafe</h2>
+                <h2 class="mb-6 tm-text-green text-3xl font-medium">Đôi lời về Tara Cafe</h2>
                 <p class="mb-6 text-base leading-8">
-                    {{ map_configs.about }}
+                    {{ map_configs.about }} <i class="fa-solid fa-heart" style="color:red"></i>
               </p>
             </div>
            
@@ -137,10 +139,11 @@
     
 
 
-
+    <script src="{% static 'all.min.js' %}"></script>
     <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'parallax.min.js' %}"></script>
     <script src="{% static 'jquery.singlePageNav.min.js' %}"></script>
+    
     <script src="{% static 'app.js' %}"></script>
     <script type="text/javascript" src="{% static 'slick.min.js' %}"></script>
 
